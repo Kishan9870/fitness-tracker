@@ -1,0 +1,15 @@
+<div class="w-full flex items-center gap-4" style="width: 1200px">
+  <mat-form-field
+    subscriptSizing="dynamic"
+    appearance="outline"
+    class="!w-8/12"
+  >
+    <input
+      matInput
+      placeholder="Search"
+      (keypress)="onTyping($event)"
+      (change)="inputChange($event)"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+</div>

@@ -2,16 +2,28 @@
   <img
     mat-card-image
     class="w-full h-48 object-cover"
-    src="https://static8.depositphotos.com/1012223/980/i/950/depositphotos_9803930-stock-photo-demo-cubes.jpg"
+    [src]="product.imageUrl"
     alt="Demo img"
   />
   <mat-card-content class="p-6">
-    <h1 class="text-xl font-semibold mb-2">Product Name</h1>
-    <h2 class="text-md text-gray-600 mb-4">Product Brand</h2>
+    <h1 class="text-xl font-semibold mb-2">{{ product.name }}</h1>
+    <h2 class="text-md text-gray-600 mb-4">{{ product.brand }}</h2>
     <div class="flex items-center justify-between">
-      <span class="text-lg font-bold text-gray-900">Rs 1000</span>
-      <span class="text-lg font-bold text-red-500">Rs 500</span>
-      <span class="text-sm text-green-600">(50% off)</span>
+      <span class="text-lg font-bold text-gray-900"
+        >Rs {{ product.originalPrice }}</span
+      >
+      <span class="text-lg font-bold text-red-500"
+        >Rs {{ product.discountedPrice }}</span
+      >
+      <span class="text-sm text-green-600"
+        >({{ product.discountPercentage }}% off)</span
+      >
+    </div>
+    <!-- <button mat-raised-button color="primary" (click)="addToCart(product)"> -->
+    <div class="flex justify-center">
+      <button mat-raised-button color="primary" (click)="addToCart()">
+        Add to Cart
+      </button>
     </div>
   </mat-card-content>
 </mat-card>

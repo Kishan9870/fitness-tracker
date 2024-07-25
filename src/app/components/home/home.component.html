@@ -1,8 +1,14 @@
 <div class="p-8 m-4">
+  <div class="flex m-4">
+    <app-search (search)="onSearch($event)"></app-search>
+  </div>
   <div class="flex flex-wrap">
-    @for (product of products; track $index) {
+    @for (product of filteredProduct; track $index) {
     <div class="w-4/12 pr-2 mb-4">
-      <app-product-card></app-product-card>
+      <app-product-card
+        [product]="product"
+        (addProduct)="onAddProduct($event)"
+      ></app-product-card>
     </div>
     }
   </div>
