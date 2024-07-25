@@ -3,6 +3,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 import { SearchComponent } from '../search/search.component';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../types/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +15,8 @@ import { Product } from '../../types/product';
 export class HomeComponent {
   products: Product[] = [];
   filteredProduct: Product[] = [];
-
   productService = inject(ProductService);
+  router = inject(Router);
 
   constructor() {
     // this.products = this.createArrayOfNumbers();
@@ -32,6 +33,7 @@ export class HomeComponent {
 
   onAddProduct(event: any) {
     console.log('selected id :', event);
+    this.router.navigateByUrl('/product/' + event);
   }
 
   onSearch(search: string) {

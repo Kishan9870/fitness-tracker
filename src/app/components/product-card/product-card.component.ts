@@ -19,4 +19,8 @@ export class ProductCardComponent {
     console.log('clicked');
     this.addProduct.emit(this.product.id);
   }
+
+  viewProduct() {
+    console.log('Method not implemented.');
+  }
 }
