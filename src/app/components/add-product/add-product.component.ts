@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { Product } from '../../types/product';
 import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-product',
@@ -16,6 +17,7 @@ import { Router } from '@angular/router';
 export class AddProductComponent {
   productService = inject(ProductService);
   router = inject(Router);
+  toastrService = inject(ToastrService);
 
   product: Product = {
     name: '',
@@ -28,7 +30,7 @@ export class AddProductComponent {
 
   addProduct() {
     this.productService.addProduct(this.product).subscribe((result) => {
-      alert('product saved');
+      this.toastrService.success('product saved');
       this.router.navigateByUrl('/');
     });
   }

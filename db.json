@@ -12,7 +12,7 @@
     {
       "id": "2",
       "name": "Sample Product A",
-      "brand": "Sample Brand updated",
+      "brand": "Test brand 1230",
       "imageUrl": "https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg",
       "originalPrice": "1200",
       "discountedPrice": "600",
@@ -80,6 +80,15 @@
       "originalPrice": "411",
       "discountedPrice": "40",
       "discountPercentage": "450"
+    },
+    {
+      "id": "8f61",
+      "name": "New product",
+      "brand": "Test 123456",
+      "imageUrl": "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
+      "originalPrice": "500",
+      "discountedPrice": "250",
+      "discountPercentage": "50"
     }
   ]
 }

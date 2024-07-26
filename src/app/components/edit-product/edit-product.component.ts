@@ -8,9 +8,9 @@ import {
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { Product } from '../../types/product';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-product',
@@ -35,6 +35,7 @@ export class EditProductComponent {
   productService = inject(ProductService);
   activatedRoute = inject(ActivatedRoute);
   router = inject(Router);
+  toastrService = inject(ToastrService);
 
   ngOnInit() {
     let productId = this.activatedRoute.snapshot.params['id'];
@@ -45,14 +46,14 @@ export class EditProductComponent {
 
   editProduct() {
     if (this.productForm.invalid) {
-      alert('provide valid details.');
+      this.toastrService.error('provide valid details.');
       return;
     }
 
     this.productService
       .updateProduct(this.productForm.value)
       .subscribe((result) => {
-        alert('product updated');
+        this.toastrService.success('product updated');
         this.router.navigateByUrl('/');
       });
   }
