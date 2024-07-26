@@ -13,14 +13,13 @@ import { Product } from '../../types/product';
 })
 export class ProductCardComponent {
   @Input() product!: Product;
-  @Output() addProduct = new EventEmitter<number>();
+  @Output() addProduct = new EventEmitter<string>();
 
   addToCart() {
-    console.log('clicked');
-    this.addProduct.emit(this.product.id);
+    // this.addProduct.emit(this.product.id);
   }
 
   viewProduct() {
-    console.log('Method not implemented.');
+    this.addProduct.emit(this.product.id);
   }
 }

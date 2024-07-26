@@ -4,12 +4,15 @@
     appearance="outline"
     class="!w-8/12"
   >
-    <input
-      matInput
-      placeholder="Search"
-      (keypress)="onTyping($event)"
-      (change)="inputChange($event)"
-    />
+    <input matInput name="search" [(ngModel)]="text" placeholder="Search" />
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
+  <button
+    mat-raised-button
+    color="accent"
+    (click)="addProduct()"
+    routerLink="/add-product"
+  >
+    Add product
+  </button>
 </div>

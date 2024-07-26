@@ -24,15 +24,12 @@ export class HomeComponent {
 
   ngOnInit() {
     this.productService.getProducts().subscribe((result) => {
-      console.log('api call start');
       this.products = result;
       this.filteredProduct = this.products;
-      console.log('api call done');
     });
   }
 
   onAddProduct(event: any) {
-    console.log('selected id :', event);
     this.router.navigateByUrl('/product/' + event);
   }
 
