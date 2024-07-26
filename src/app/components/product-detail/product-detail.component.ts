@@ -4,6 +4,7 @@ import { Product } from '../../types/product';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-detail',

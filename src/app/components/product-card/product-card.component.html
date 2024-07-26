@@ -7,14 +7,14 @@
   />
   <mat-card-content class="p-6">
     <h1 class="text-xl font-semibold mb-2">{{ product.name }}</h1>
-    <h2 class="text-md text-gray-600 mb-4">{{ product.brand }}</h2>
+    <h2 class="text-md text-gray-600 mb-4">{{ product.brand | uppercase }}</h2>
     <div class="flex items-center justify-between">
-      <span class="text-lg font-bold text-gray-900"
-        >Rs {{ product.originalPrice }}</span
-      >
-      <span class="text-lg font-bold text-red-500"
-        >Rs {{ product.discountedPrice }}</span
-      >
+      <span class="text-lg font-bold text-gray-900">{{
+        product.originalPrice | rupee
+      }}</span>
+      <span class="text-lg font-bold text-red-500">{{
+        product.discountedPrice | rupee
+      }}</span>
       <span class="text-sm text-green-600"
         >({{ product.discountPercentage }}% off)</span
       >
